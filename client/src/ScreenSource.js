@@ -29,7 +29,7 @@ function Sources(props) {
     async function fetchData() {
       if(props.token !== null && props.languageCode !== null && props.countryCode !== null){
 
-        var rawResponse = await fetch(`http://newsapi.org/v2/sources?language=${props.languageCode}&country=${props.countryCode}&apiKey=7dacd8a2aabe4673a8daed9dfcd5875a`);  
+        var rawResponse = await fetch(`/sources?language=${props.languageCode}&country=${props.countryCode}`);  
         var response = await rawResponse.json();
         setSourceList(response.sources);
 

@@ -127,11 +127,22 @@ router.post('/add-to-wishlist', async function (req, res) {
 
 
 /* GET TOP RECENT ARTICLES FROM API */
+router.get('/sources', async function (req, res) {
+
+  var APIresponse = request("GET", `https://newsapi.org/v2/sources?language=${req.query.language}&country=${req.query.country}&apiKey=${process.env.NEWSAPI_KEY}`);
+  APIresponse = JSON.parse(APIresponse.getBody());
+
+  res.json({sources: APIresponse.sources});
+
+});
+
+
+/* GET TOP RECENT ARTICLES BY SOURCE FROM API */
 router.get('/top-headlines', async function (req, res) {
 
-  var APIresponse = request("GET", `http://newsapi.org/v2/top-headlines?sources=${req.query.id}&apiKey=${process.env.NEWSAPI_KEY}`);
+  var APIresponse = request("GET", `https://newsapi.org/v2/top-headlines?sources=${req.query.id}&apiKey=${process.env.NEWSAPI_KEY}`);
   APIresponse = JSON.parse(APIresponse.getBody());
-  
+
   res.json({articles: APIresponse.articles});
 
 });
