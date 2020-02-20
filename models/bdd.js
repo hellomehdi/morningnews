@@ -7,7 +7,7 @@ var options = {
   useUnifiedTopology : true
 }
 
-mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@morningnews-z356p.mongodb.net/morningnews?retryWrites=true&w=majority`, 
+mongoose.connect(process.env.MONGODB_URI, 
     options,         
     function(err) {
         if(err) {

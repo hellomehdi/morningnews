@@ -62,9 +62,6 @@ function MyArticles(props) {
     setModalTitle(title);
     setModalContent(content);
   };
-  var handleOk = e => {
-    setVisible(false)
-  };
   var handleCancel = e => {
     setVisible(false)
   };
@@ -77,7 +74,9 @@ function MyArticles(props) {
       <Modal
         title={modalTitle}
         visible={visible}
-        onOk={handleOk}
+        okText='Read more'
+        okButtonProps={{href:article.url, target:'_blank', style:{marginLeft:'10px'}}}
+        cancelText='Close'
         onCancel={handleCancel}
         closable={false}
         >

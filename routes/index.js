@@ -107,6 +107,7 @@ router.post('/add-to-wishlist', async function (req, res) {
       description: req.body.description,
       content: req.body.content,
       urlToImage: req.body.urlToImage,
+      url: req.body.url,
       country: req.body.country
      });
     savedArticle = await newArticle.save();

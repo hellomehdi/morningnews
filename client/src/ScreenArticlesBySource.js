@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import './App.css';
-import { Card, Icon, Modal} from 'antd';
+import { Card, Icon, Modal } from 'antd';
 import Nav from './Nav'
 import { connect } from 'react-redux';
 const { Meta } = Card;
@@ -59,6 +59,7 @@ function ArticlesBySource(props) {
           description: article.description,
           content: article.content,
           urlToImage: article.urlToImage,
+          url: article.url,
           token: props.token,
           country: props.country
         });
@@ -81,9 +82,6 @@ function ArticlesBySource(props) {
     setModalTitle(title);
     setModalContent(content);
   };
-  var handleOk = e => {
-    setVisible(false)
-  };
   var handleCancel = e => {
     setVisible(false)
   };
@@ -96,7 +94,9 @@ function ArticlesBySource(props) {
           <Modal
             title={modalTitle}
             visible={visible}
-            onOk={handleOk}
+            okText='Read more'
+            okButtonProps={{href:article.url, target:'_blank', style:{marginLeft:'10px'}}}
+            cancelText='Close'
             onCancel={handleCancel}
             closable={false}
             >
