@@ -9,6 +9,7 @@ A first MERN Stack project to try out Redux. Final result at https://usemorningn
 * Dans ce fichier *.env*, ajouter : `MONGODB_URI=votreURLdeConnexionMongoDB`
 * Dans votre fichier de connexion à la BDD, remplacez l'URL de connexion MongoDB par : `process.env.MONGODB_URI`
 * Dans *.gitignore*, ajouter sur une ligne : `.env`
+* Dans *.gitignore*, ajouter sur une ligne : `node_modules/`
 
 ## 2) Préparer les fichiers front et back
 * Dans *app.js* (backend) enlever : `app.use(express.static(path.join(__dirname, 'public')));`
@@ -19,6 +20,7 @@ A first MERN Stack project to try out Redux. Final result at https://usemorningn
 ## 3) Mise en ligne
 * Créer le project sur heroku
 * Installer l'add-on mLab/mongoDB sur Heroku
+* Pushez votre projet sur Heroku
 * Normalement c'est bon.
 
 La base de données n'est plus celle qu'on a crée, mais une autre créée par Heroku.
