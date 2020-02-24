@@ -6,7 +6,7 @@ A first MERN Stack project to try out Redux. Final result at https://usemorningn
 * Installer le package dotenv (**npm i dotenv**) dans le backend.
 * Ajouter **require("dotenv").config();** au début de app.js dans le backend.
 * Créer un fichier .env dans le backend
-* Dans ce fichier .env, ajouter **MONGODB_URI=<votreURLdeConnexionMongoDB>**
+* Dans ce fichier .env, ajouter **MONGODB_URI=votreURLdeConnexionMongoDB**
 * Dans votre fichier de connexion à la BDD, remplacez l'URL de connexion MongoDB par **process.env.MONGODB_URI**
 * Dans *.gitignore*, ajouter sur une ligne **.env**
 
