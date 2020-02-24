@@ -11,8 +11,8 @@ A first MERN Stack project to try out Redux. Final result at https://usemorningn
 * Dans *.gitignore*, ajouter sur une ligne **.env**
 
 ## 2) Préparer les fichiers front et back
-* Dans app.js (backend) à la place de : **app.use(express.static(path.join(__dirname, 'public')));**
-Mettre : **app.use(express.static(path.join(__dirname, 'client/build')));**
+* Dans app.js (backend) enlever : **app.use(express.static(path.join(__dirname, 'public')));**
+* Et mettre : **app.use(express.static(path.join(__dirname, 'client/build')));**
 * Dans le package.json du backend ajouter la ligne **"heroku-postbuild": "cd client && npm install && npm run build"** (cf mon package.json)
 (*client* est le nom du fichier où il y a les fichiers React)
 
